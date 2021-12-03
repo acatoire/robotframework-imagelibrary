@@ -1,0 +1,57 @@
+#GLOBAL BUTTONS definitions
+global_buttons_defs:
+    #button name
+    cursor:
+        zone: [0, 0, 10, 10]
+    menu:
+        zone: [10, 40, 40, 40]
+    menu-std:
+        zone: [10, 40, 40, 40]
+    menu-sci:
+        zone: [10, 40, 40, 40]
+    menu-prog:
+        zone: [10, 40, 40, 40]
+    equal:
+        zone: [410, 720, 10, 10]
+    one:
+        zone: [640, 30, 10, 10]
+    two:
+        zone: [640, 160, 10, 10]
+    tree:
+        zone: [640, 290, 10, 10]
+    four:
+        zone: [580, 30, 10, 10]
+    five:
+        zone: [580, 160, 10, 10]
+    six:
+        zone: [580, 290, 10, 10]
+    seven:
+        zone: [480, 30, 10, 10]
+    height:
+        zone: [480, 160, 10, 10]
+    nine:
+        zone: [480, 290, 10, 10]
+    zero:
+        zone: [720, 160, 10, 10]
+
+#WINDOWS definitions
+#name of window. 'main' is default and MUST be defined. Other windows names are free to choose.
+main:   # Standard Calculator page
+    #zones stored in coordinates
+    zones:
+        #zone name: its value. Coordinates are stored in a list.
+        value: [0, 0, 552, 552]
+
+    #BUTTONS definitions
+    #global buttons
+    global_buttons:
+        # global button name from global_buttons_defs section.
+        # And put the desired value for this window:
+        # - normal, highlighted, disabled or all to use all states
+        cursor: all
+
+    #just buttons
+    buttons:
+        #button name and value is the name of png file
+        percent:
+            zone: [290, 30, 10, 10]
