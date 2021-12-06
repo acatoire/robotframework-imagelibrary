@@ -7,3 +7,5 @@ __pycache__
 samples/win-calc/log.html
 samples/win-calc/output.xml
 samples/win-calc/report.html
+samples/win-calc/prepared.png
+samples/win-calc/guiproc-screenshot-*.png

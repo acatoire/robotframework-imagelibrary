@@ -10,16 +10,34 @@ Suite Teardown      On Suite Teardown
 
 *** Test Cases ***
 Basic button usage
+    sleep               1
+    Press Button        one
+    sleep               ${CLICK_DELAY}
+    Press Button        two
+    sleep               ${CLICK_DELAY}
+    Press Button        three
+    sleep               ${CLICK_DELAY}
+    Press Button        four
+    sleep               ${CLICK_DELAY}
+    Press Button        five
+    sleep               ${CLICK_DELAY}
+    Press Button        six
+    sleep               ${CLICK_DELAY}
+    Press Button        seven
+    sleep               ${CLICK_DELAY}
+    Press Button        eight
+    sleep               ${CLICK_DELAY}
+    Press Button        nine
+    sleep               ${CLICK_DELAY}
+    Press Button        zero
+
+    # Read the zone
+    Get Number From Zone     screen
+    ${value} = 1234567890
+    Should Be Equal     ${value}    1234567890
+
+    # End wait foe convinence
     sleep               5
-    Press Button        menu
-    sleep               1
-    Press Button        menu
-    sleep               1
-    Press Button        menu
-    sleep               1
-    Press Button        menu
-    sleep               1
-    Press Button        menu
 
 
 *** Keywords ***
@@ -36,14 +54,16 @@ On Suite Setup
     # as list with paths to template images and optional area if you want to work only with currently active window.
     # You need also to specify the area region by using keyword Get Window Area which will automatically detect the
     # active window or pass your own.
-    Init                settings=${Settings}     references=${References}
+    Init                settings=@{SETTINGS}     references=@{REFERENCES}
 
 
 On Suite Teardown
     Run   taskkill /IM Calculator.exe /F /T
 
 *** Variables ***
+# Delay between click
+${CLICK_DELAY}    0.1s
 # List with yaml configs
-@{SETTINGS}     ${CURDIR}${/}config_img.yaml
+@{SETTINGS}       ${CURDIR}${/}config_zones.yaml
 # List with template images dirs
-@{REFERENCES}   ${CURDIR}${/}images
+@{REFERENCES}     ${CURDIR}${/}images
