@@ -76,7 +76,7 @@ class Zone:
             img = resize_after_screenshot_modification(img, resize)
             
         config = ""
-        config += "-psm 8 -c tessedit_char_whitelist=0123456789"
+        config += "--psm 8 -c tessedit_char_whitelist=0123456789"
 
         try:
             return int(image_to_string(img, config=config))
@@ -94,7 +94,7 @@ class Zone:
             img = resize_after_screenshot_modification(img, resize)
             
         config = ""
-        config += "-psm 8 -c tessedit_char_whitelist=.,0123456789"
+        config += "--psm 8 -c tessedit_char_whitelist=.,0123456789"
 
         try:
             x = float(image_to_string(img, config=config))
@@ -113,7 +113,7 @@ class Zone:
             img = resize_after_screenshot_modification(img, resize)
         
         config = ""
-        config += "-psm 6"
+        config += "--psm 6"
 
         txt = image_to_string(img, config=config)
         
