@@ -3,46 +3,74 @@ Documentation  Simple test case usign calculator button defined as zones, move t
 
 Library         OperatingSystem
 Library         ImageLibrary        screenshot_folder=${CURDIR}${/}output
+Library         String
 
 # In Suite Setup keyword init the Image Library with special keyword Init.
 Suite Setup 	    On Suite Setup
 Suite Teardown      On Suite Teardown
+Test Setup 	        On Test Setup
 
 *** Test Cases ***
-Basic button usage
+
+1- Basic all buttons usage
     sleep               1
     Press Button        one
-    sleep               ${CLICK_DELAY}
     Press Button        two
-    sleep               ${CLICK_DELAY}
     Press Button        three
-    sleep               ${CLICK_DELAY}
     Press Button        four
-    sleep               ${CLICK_DELAY}
     Press Button        five
-    sleep               ${CLICK_DELAY}
     Press Button        six
-    sleep               ${CLICK_DELAY}
     Press Button        seven
-    sleep               ${CLICK_DELAY}
     Press Button        eight
-    sleep               ${CLICK_DELAY}
     Press Button        nine
-    sleep               ${CLICK_DELAY}
     Press Button        zero
 
     # Read the zone
-    Get Number From Zone     screen
-    ${value} = 1234567890
-    Should Be Equal     ${value}    1234567890
+    ${value}            Get Number From Screen
+    Log                 Calculator text screen is: ${value}
+    Should Be Equal     ${value}                   ${1234567890}
 
-    # End wait foe convinence
-    sleep               5
+    # End wait for convinence
+    sleep               3
 
+2- Small integer calcul failed
+    sleep               1
+    Press Button        seven
+    Press Button        plus
+    Press Button        three
+    Press Button        minus
+    Press Button        five
+    Press Button        equal
+
+    # Read the zone
+    ${value}            Get Number From Screen
+
+    Should Be Equal     ${value}                   ${2}
+
+
+    # End wait for convinence
+    sleep               3
+
+3- Small float calcul passed
+    sleep               1
+    Press Button        one
+    Press Button        divide
+    Press Button        four
+    Press Button        multiply
+    Press Button        five
+    Press Button        equal
+
+    # Read the zone
+    # ${value}            Get Float Number From Zone       screen small     # Do not work on
+    ${value}            Get Number From Screen
+
+    Should Be Equal     ${value}                         ${1.25}
+
+    # End wait for convinence
+    sleep               3
 
 *** Keywords ***
 On Suite Setup
-
     # Start the calculator application
     Run   calc
 
@@ -60,9 +88,26 @@ On Suite Setup
 On Suite Teardown
     Run   taskkill /IM Calculator.exe /F /T
 
+
+On Test Setup
+    # Start the calculator application
+    Press Button        clear
+    sleep               1
+
+Get Number From Screen
+    # I had issue with "Get Number From Zone" and "Get Float Number From Zone"
+    # Sometimes no reconition
+    # Issue with coma in french numbers
+
+    ${value}    Get Text From Zone       screen
+    ${value}    Replace String           ${value}       ,       .
+    ${value}    Convert To Number        ${value}
+
+    [return]      ${value}
+
 *** Variables ***
 # Delay between click
-${CLICK_DELAY}    0.1s
+${CLICK_DELAY}    0s
 # List with yaml configs
 @{SETTINGS}       ${CURDIR}${/}config_zones.yaml
 # List with template images dirs

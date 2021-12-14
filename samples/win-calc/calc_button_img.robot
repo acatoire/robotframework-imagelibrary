@@ -12,32 +12,22 @@ Suite Teardown      On Suite Teardown
 Basic button usage
     sleep               1
     Press Button        nine
-    sleep               ${CLICK_DELAY}
     Press Button        eight
-    sleep               ${CLICK_DELAY}
     Press Button        seven
-    sleep               ${CLICK_DELAY}
     Press Button        six
-    sleep               ${CLICK_DELAY}
     Press Button        five
-    sleep               ${CLICK_DELAY}
     Press Button        four
-    sleep               ${CLICK_DELAY}
     Press Button        three
-    sleep               ${CLICK_DELAY}
     Press Button        two
-    sleep               ${CLICK_DELAY}
     Press Button        one
-    sleep               ${CLICK_DELAY}
     Press Button        zero
 
     # Read the zone
-    Get Number From Zone     screen
-    ${value} = 1234567890
-    Should Be Equal     ${value}    1234567890
+    ${value}    Get Number From Zone     screen
+    Should Be Equal     ${value}    ${9876543210}
 
     # End wait foe convinence
-    sleep               5
+    sleep               3
 
 
 *** Keywords ***

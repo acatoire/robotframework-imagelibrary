@@ -9,14 +9,15 @@ main:
     #zones defined by coordinates
     zones:
         #zone name: its value. Coordinates are stored in a list.
-        calculator: [0, 0, 510, 790]
-        screen: [15, 115, 500, 160]
+        calculator: [0, 0, 515, 790]
+        screen: [35, 110, 485, 58]
 
     #Buttons defined by coordinates
     button_coord:
         # Template:
         # button_name:
         #     position: [y, y, w, h]
+        # --- Menu
         menu:
             position: [ 10,  40, 40, 40]
         menu-std:
@@ -25,28 +26,26 @@ main:
             position: [ 10,  40, 40, 40]
         menu-prog:
             position: [ 10,  40, 40, 40]
-
-        # -------------------------------------
-        one:
-            position: [ 30, 640, 10, 10]
-        two:
-            position: [160, 640, 10, 10]
-        three:
-            position: [290, 640, 10, 10]
-        plus:
-            position: [480, 640, 10, 10]
-
-        # -------------------------------------
-        four:
-            position: [ 30, 580, 10, 10]
-        five:
-            position: [160, 580, 10, 10]
-        six:
-            position: [290, 580, 10, 10]
-        minus:
-            position: [480, 580, 10, 10]
-
-        # -------------------------------------
+        # --- Memory
+        # --- Line 1
+        percent:
+            position: [ 30, 300, 10, 10 ]
+        clear entry:
+            position: [160, 300, 10, 10 ]
+        clear:
+            position: [290, 300, 10, 10 ]
+        back:
+            position: [480, 300, 10, 10 ]
+        # --- Line 2
+        inv:
+            position: [ 30, 380, 10, 10 ]
+        squar:
+            position: [160, 380, 10, 10 ]
+        square root:
+            position: [290, 380, 10, 10 ]
+        divide:
+            position: [480, 380, 10, 10 ]
+        # --- Line 3
         seven:
             position: [ 30, 480, 10, 10]
         eight:
@@ -55,8 +54,25 @@ main:
             position: [290, 480, 10, 10]
         multiply:
             position: [480, 480, 10, 10]
-
-        # -------------------------------------
+        # --- Line 4
+        four:
+            position: [ 30, 580, 10, 10]
+        five:
+            position: [160, 580, 10, 10]
+        six:
+            position: [290, 580, 10, 10]
+        minus:
+            position: [480, 580, 10, 10]
+        # --- Line 5
+        one:
+            position: [ 30, 640, 10, 10]
+        two:
+            position: [160, 640, 10, 10]
+        three:
+            position: [290, 640, 10, 10]
+        plus:
+            position: [480, 640, 10, 10]
+        # --- Line 6
         plusminus:
             position: [ 30, 720, 10, 10]
         zero:
