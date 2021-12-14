@@ -1,6 +1,6 @@
 import ctypes
 import ctypes.wintypes
-from pyautogui._pyautogui_win import POINT
+from pyautogui import Point
 
 
 class RECT (ctypes.Structure):
@@ -23,7 +23,7 @@ def get_window_client_rect(hwnd):
     rc = RECT()
     ctypes.windll.user32.GetClientRect(hwnd, ctypes.byref(rc))
 
-    pt = POINT()
+    pt = Point()
     pt.x = rc.left
     pt.y = rc.top
     ctypes.windll.user32.ClientToScreen(hwnd, ctypes.byref(pt))
