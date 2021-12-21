@@ -1,0 +1,83 @@
+
+
+# WINDOWS definitions
+#     'main' is default and MUST be defined.
+#     Other windows names are free to choose.
+
+# Standard Calculator page
+main:
+    #zones defined by coordinates
+    zones:
+        #zone name: its value. Coordinates are stored in a list.
+        calculator: [0, 0, 515, 790]
+        screen: [35, 110, 485, 58]
+
+    #Buttons defined by coordinates
+    button_coord:
+        # Template:
+        # button_name:
+        #     position: [y, y, w, h]
+        # --- Menu
+        menu:
+            position: [ 10,  40, 20, 20]
+        menu-std:
+            position: [ 10,  40, 20, 20]
+        menu-sci:
+            position: [ 10,  40, 20, 20]
+        menu-prog:
+            position: [ 10,  40, 20, 20]
+        # --- Memory
+        # --- Line 1
+        percent:
+            position: [ 30, 300, 10, 10 ]
+        clear entry:
+            position: [160, 300, 10, 10 ]
+        clear:
+            position: [290, 300, 10, 10 ]
+        back:
+            position: [480, 300, 10, 10 ]
+        # --- Line 2
+        inv:
+            position: [ 30, 380, 10, 10 ]
+        squar:
+            position: [160, 380, 10, 10 ]
+        square root:
+            position: [290, 380, 10, 10 ]
+        divide:
+            position: [480, 380, 10, 10 ]
+        # --- Line 3
+        seven:
+            position: [ 30, 480, 10, 10]
+        eight:
+            position: [160, 480, 10, 10]
+        nine:
+            position: [290, 480, 10, 10]
+        multiply:
+            position: [480, 480, 10, 10]
+        # --- Line 4
+        four:
+            position: [ 30, 580, 10, 10]
+        five:
+            position: [160, 580, 10, 10]
+        six:
+            position: [290, 580, 10, 10]
+        minus:
+            position: [480, 580, 10, 10]
+        # --- Line 5
+        one:
+            position: [ 30, 640, 10, 10]
+        two:
+            position: [160, 640, 10, 10]
+        three:
+            position: [290, 640, 10, 10]
+        plus:
+            position: [480, 640, 10, 10]
+        # --- Line 6
+        plusminus:
+            position: [ 30, 720, 10, 10]
+        zero:
+            position: [160, 720, 10, 10]
+        coma:
+            position: [290, 720, 10, 10]
+        equal:
+            position: [480, 720, 10, 10]
